@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Cute Request</title>
+  </head>
+  <body>
+    <div class="header">
+      <p>Quieres salir conmigo?</p>
+    </div>
+    <div class="giff-request">
+      <img src="./utils/request.gif" alt="cat-request-cute" />
+    </div>
+    <div class="buttons">
+      <button class="btn" type="submit" id="yesButton" onclick="next()">
+        si
+      </button>
+      <button
+        class="btn"
+        type="submit"
+        id="noButton"
+        onmouseover="moverAleatoria()"
+      >
+        no
+      </button>
+      <script>
+        function next() {
+          window.location.href = "yes.html";
+        }
+        function moverAleatoria() {
+          console.log("aca");
+          var x =
+            Math.random() *
+            (window.innerWidth -
+              document.getElementById("noButton").offsetWidth);
+          var y =
+            Math.random() *
+            (window.innerHeight -
+              document.getElementById("noButton").offsetHeight);
+          document.getElementById("noButton").style.left = `${x}px`;
+          document.getElementById("noButton").style.top = `${y}px`;
+        }
+      </script>
+    </div>
+  </body>
+</html>
